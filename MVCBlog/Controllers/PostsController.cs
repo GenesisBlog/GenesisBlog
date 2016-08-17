@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using MVCBlog.Models;
+using PagedList;
 
 namespace MVCBlog.Controllers
 {
@@ -16,9 +17,9 @@ namespace MVCBlog.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Posts.Include(p=>p.Author).ToList());
+            return View(db.Posts.Include(p=>p.Author).ToList().ToPagedList(page ?? 1, 7));
         }
 
         // GET: Posts/Details/5

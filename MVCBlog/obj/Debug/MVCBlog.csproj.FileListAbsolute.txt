@@ -133,7 +133,6 @@ C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.dll
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.pdb
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\roslyn\csc.exe
@@ -205,3 +204,8 @@ D:\GenesisBlog\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.
 D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
 D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.dll
 D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.pdb
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\PagedList.dll
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\PagedList.Mvc.dll
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\PagedList.xml
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\PagedList.Mvc.xml
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
