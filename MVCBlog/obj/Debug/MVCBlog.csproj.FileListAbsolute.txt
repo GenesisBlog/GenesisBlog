@@ -201,7 +201,6 @@ D:\GenesisBlog\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.OAuth.xml
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.Google.xml
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.Twitter.xml
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
 D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.dll
 D:\GenesisBlog\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.pdb
 C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\bin\PagedList.dll
