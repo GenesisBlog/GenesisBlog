@@ -1,4 +1,5 @@
-﻿@model MVCBlog.Models.IndexViewModel
+﻿@using Microsoft.AspNet.Identity
+@model MVCBlog.Models.IndexViewModel
 @{
     ViewBag.Title = "Manage";
 }
@@ -11,6 +12,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>Password:</dt>
+
+        <dt>Profile Picture</dt>
+        <dd>
+            @if (User.Identity.GetUserName() != null)
+            {
+                var imgUrl = Url.Content("~/Content/images/profile/" + User.Identity.GetUserName() + ".png") + "?time=" + DateTime.Now.ToString();
+                <div class="upimage">
+                    <div class="accimg">
+                        <img src="@imgUrl" height="250" width="250" />
+                    </div>
+                    <div class="mngimg">
+                        @using (Html.BeginForm("UploadPhoto", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="btn btn-default browseing">
+                                <input type="file" name="file" id="files" onchange="this.form.submit()" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </dd>
+
         <dd>
             [
             @if (Model.HasPassword)
