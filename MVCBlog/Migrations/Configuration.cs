@@ -28,6 +28,10 @@ namespace MVCBlog.Migrations
 
                 CreateRole(context, "Administrators");
                 AddUserToRole(context, "admin@gmail.com", "Administrators");
+                CreateRole(context, "Membership");
+                AddUserToRole(context, "pesho@gmail.com", "Membership");
+                AddUserToRole(context, "merry@gmail.com", "Membership");
+                AddUserToRole(context, "geshu@gmail.com", "Membership");
 
                 CreatePost(context,
                     title: "Work Begins on HTML5.1",
