@@ -11,25 +11,7 @@ namespace MVCBlog
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
-            createRolesandUsers();
-        }
-
-        private void createRolesandUsers()
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-
-            // creating Creating Membership role     
-            if (!roleManager.RoleExists("Membership"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Membership";
-                roleManager.Create(role);
-
-            }
+            ConfigureAuth(app);          
         }
     }
 }

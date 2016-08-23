@@ -28,11 +28,7 @@ namespace MVCBlog.Migrations
 
                 CreateRole(context, "Administrators");
                 AddUserToRole(context, "admin@gmail.com", "Administrators");
-                CreateRole(context, "Membership");
-                AddUserToRole(context, "pesho@gmail.com", "Membership");
-                AddUserToRole(context, "merry@gmail.com", "Membership");
-                AddUserToRole(context, "geshu@gmail.com", "Membership");
-
+                
                 CreatePost(context,
                     title: "Work Begins on HTML5.1",
                     body: @"<p>The World Wide Web Consortium (W3C) has begun work on <b>HTML5.1</b>, and this time it is handling the creation of the standard a little differently. The specification has its <b><a href=""https://w3c.github.io/html/"">own GitHub project</a></b> where anyone can see what is happening and propose changes.</p>
