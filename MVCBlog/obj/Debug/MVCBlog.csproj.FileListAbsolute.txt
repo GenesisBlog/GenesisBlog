@@ -211,3 +211,4 @@ D:\GenesisBlog\GenesisBlog\MVCBlog\bin\PagedList.dll
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\PagedList.Mvc.dll
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\PagedList.xml
 D:\GenesisBlog\GenesisBlog\MVCBlog\bin\PagedList.Mvc.xml
+C:\Users\Philip\Documents\GitHub\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
