@@ -52,12 +52,14 @@ namespace MVCBlog.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
+          
             return View(comment);
         }
 

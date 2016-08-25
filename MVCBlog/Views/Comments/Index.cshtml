@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.Post.Title)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Post.Body)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Author)
         </th>
         <th>
@@ -25,8 +28,11 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Post.Title)
+    <td>
+        @Html.DisplayFor(modelItem => item.Post.Title)
+    </td>
+    <td>
+            @Html.DisplayFor(modelItem => item.Post.Body)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Author)
@@ -35,9 +41,10 @@
             @Html.DisplayFor(modelItem => item.Body)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @if (User.IsInRole("Administrators"))
+            {
+                @Html.ActionLink("Изтрий", "Delete", new { id = item.Id })
+            }
         </td>
     </tr>
 }

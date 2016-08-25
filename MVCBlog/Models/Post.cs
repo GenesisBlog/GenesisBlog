@@ -32,5 +32,7 @@ namespace MVCBlog.Models
 
         [ForeignKey("Author_Id")]
         public ApplicationUser Author { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; } 
     }
 }
