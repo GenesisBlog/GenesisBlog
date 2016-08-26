@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCBlog.Models;
+using MVCBlog.Extensions;
 
 namespace MVCBlog.Controllers
 {
@@ -55,6 +56,7 @@ namespace MVCBlog.Controllers
                 
                 db.Comments.Add(comment);
                 db.SaveChanges();
+                this.AddNotification("Коментара е създаден", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
 
@@ -119,6 +121,7 @@ namespace MVCBlog.Controllers
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);
             db.SaveChanges();
+            this.AddNotification("Коментара е изтрит", NotificationType.SUCCESS);
             return RedirectToAction("Index");
         }
 

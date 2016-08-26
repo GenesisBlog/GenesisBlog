@@ -5,7 +5,7 @@
     
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Детайли";
 }
 
 <div>
@@ -19,16 +19,26 @@
 </div>
 
 <p>
-    
-    @Html.ActionLink("Назад към списъка", "Index")
-</p>
- <p>
-    @Html.ActionLink("Създай нов коментар", "Create", "Comments")
+    @Html.ActionLink("Добави коментар", "Create", "Comments")
 </p>
 
 <p>
     Коментари:
+
 </p>
+<div>
+    @foreach (var item in Model.Comments)
+    {
+        <p>
+            @Html.DisplayFor(modelItem => item.Author)
+        </p>
+
+        <p>
+            @Html.DisplayFor(modelItem => item.Body)
+        </p>
+        <hr/>
+    }
+</div>
 
 
 

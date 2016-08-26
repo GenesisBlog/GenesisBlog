@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using MVCBlog.Models;
 using PagedList;
+using MVCBlog.Extensions;
 
 namespace MVCBlog.Controllers
 {
@@ -29,7 +30,7 @@ namespace MVCBlog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Include(p=>p.Comments).Single(p=>p.Id==id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -58,6 +59,7 @@ namespace MVCBlog.Controllers
                 post.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Posts.Add(post);
                 db.SaveChanges();
+                this.AddNotification("Статията е създадена", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
 
@@ -94,6 +96,7 @@ namespace MVCBlog.Controllers
             {
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
+                this.AddNotification("Статията е променена", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
             return View(post);
@@ -124,6 +127,7 @@ namespace MVCBlog.Controllers
             Post post = db.Posts.Find(id);
             db.Posts.Remove(post);
             db.SaveChanges();
+            this.AddNotification("Статията е изтрита успешно", NotificationType.SUCCESS);
             return RedirectToAction("Index");
         }
 

@@ -1,16 +1,18 @@
 ﻿@{ViewBag.Title = "Home";}
 @model List<MVCBlog.Models.Post>
 
+<h2>Последно публикувани статии</h2>
+
 @foreach (var post in Model)
 {
     <div class="post col-md-12">
         <div class="post">
             <h2><a href="/Posts/Details/@post.Id">@post.Title</a></h2>
             <div>
-                Posted on <i>@post.Date</i>
+                Публикувано на: <i>@post.Date</i>
                 @if (post.Author != null)
                 {
-                    @:by <i>@post.Author.FullName</i>
+                    @:от <i>@post.Author.FullName</i>
                 }   
                 </div>
                 <p>@MVCBlog.Classes.Utils.CutText(post.Body)</p>
