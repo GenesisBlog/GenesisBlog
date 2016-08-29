@@ -1,4 +1,5 @@
 ﻿body {
+    background-color: #87cefa;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -8,6 +9,11 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+a.actionlink-class { color: #0000cd } 
+
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -52,6 +58,10 @@ textarea {
 .alert {
     margin-top: 10px;
     
+}
+
+a {
+    color: #00008b;
 }
 
 

@@ -1,7 +1,9 @@
-﻿@using System.Collections
+﻿@using PagedList.Mvc
+@using System.Collections
 @using MVCBlog.Controllers
 @using MVCBlog.Models
 @model MVCBlog.Models.Post
+
     
 
 @{
@@ -23,9 +25,9 @@
 </p>
 
 <p>
-    Коментари:
-
+    <h2>Коментари:</h2>
 </p>
+
 <div>
     @foreach (var item in Model.Comments)
     {
@@ -39,6 +41,7 @@
         <hr/>
     }
 </div>
+
 
 
 

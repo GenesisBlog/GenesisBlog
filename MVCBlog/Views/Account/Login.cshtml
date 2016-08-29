@@ -1,17 +1,19 @@
 ﻿@using MVCBlog.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Вход";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>Вход</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Използвайте формата за регистрацията</h4>
+                <div>
+                    <h5>Ако нямате регистрация моля използвайте формата за регистрацията</h5>
+                </div>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -38,9 +40,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Вход" class="btn btn-default" />
+                        <input type="submit" value="Вход" class="btn btn-default"/>
                     </div>
                 </div>
+                
+                
                 <p>
                     @Html.ActionLink("Регистрирай се като нов потребител", "Register")
                 </p>
@@ -51,11 +55,11 @@
             }
         </section>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+@*    <div class="col-md-4">*@
+@*        <section id="socialLoginForm">*@
+@*            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })*@
+@*        </section>*@
+@*    </div>*@
 </div>
 
 @section Scripts {

@@ -1,52 +1,52 @@
-﻿@model IEnumerable<MVCBlog.Models.Comment>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<MVCBlog.Models.Comment>
+
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Всички публикувани коменатари</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Напиши нов коментар", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Post.Title)
+            Заглавие на статията
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Post.Body)
+            Автор на коментара
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Body)
+            Съдържание на коментара
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Post.Title)
-    </td>
-    <td>
-            @Html.DisplayFor(modelItem => item.Post.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @if (User.IsInRole("Administrators"))
-            {
-                @Html.ActionLink("Изтрий", "Delete", new { id = item.Id })
-            }
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="/Posts/Details/@item.PostId">@item.Post.Title</a>               
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrators"))
+                {
+                    @Html.ActionLink("Изтрий", "Delete", new {id = item.Id})
+                }
+            </td>
+        </tr>
+    }
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new
+{
+    page
+}))

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCBlog.Models;
 using MVCBlog.Extensions;
+using PagedList;
 
 namespace MVCBlog.Controllers
 {
@@ -16,12 +17,13 @@ namespace MVCBlog.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Comments
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             var comments = db.Comments.Include(c => c.Post);
-            return View(comments.ToList());
+            return View(comments.ToList().ToPagedList(page ?? 1, 6));
         }
 
+        
         // GET: Comments/Details/5
         public ActionResult Details(int? id)
         {
