@@ -18,14 +18,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Genesis Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Genesis Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-edit" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Начало", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Всички статии", "Index", "Posts")</li>
-                    <li>@Html.ActionLink("Създай статия", "Create", "Posts")</li>
-                    <li>@Html.ActionLink("Всички коментари", "Index", "Comments")</li>
+                    <li>@Html.ActionLink("Начало", "Index", "Home", new { area = "" }, new { @class = "glyphicon glyphicon-home" })</li>
+                    <li>@Html.ActionLink("Всички статии", "Index", "Posts", new { area = "" }, new { @class = "glyphicon glyphicon-list-alt" })</li>
+                    <li>@Html.ActionLink("Създай статия", "Create", "Posts", new { area = "" }, new { @class = "glyphicon glyphicon-pencil" })</li>
+                    <li>@Html.ActionLink("Всички коментари", "Index", "Comments", new { area = "" }, new { @class = "glyphicon glyphicon-comment" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
