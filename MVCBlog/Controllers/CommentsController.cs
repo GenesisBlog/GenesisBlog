@@ -58,7 +58,7 @@ namespace MVCBlog.Controllers
                 
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                this.AddNotification("Коментара е създаден", NotificationType.SUCCESS);
+                this.AddNotification("създадохте коментар!", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
 
@@ -123,7 +123,7 @@ namespace MVCBlog.Controllers
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);
             db.SaveChanges();
-            this.AddNotification("Коментара е изтрит", NotificationType.SUCCESS);
+            this.AddNotification("изтрихте коментара!", NotificationType.SUCCESS);
             return RedirectToAction("Index");
         }
 

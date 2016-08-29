@@ -59,7 +59,7 @@ namespace MVCBlog.Controllers
                 post.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Posts.Add(post);
                 db.SaveChanges();
-                this.AddNotification("Статията е създадена", NotificationType.SUCCESS);
+                this.AddNotification("създадохте статия!", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
 
@@ -96,7 +96,7 @@ namespace MVCBlog.Controllers
             {
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
-                this.AddNotification("Статията е променена", NotificationType.SUCCESS);
+                this.AddNotification("променихте статията!", NotificationType.SUCCESS);
                 return RedirectToAction("Index");
             }
             return View(post);
@@ -127,7 +127,7 @@ namespace MVCBlog.Controllers
             Post post = db.Posts.Find(id);
             db.Posts.Remove(post);
             db.SaveChanges();
-            this.AddNotification("Статията е изтрита успешно", NotificationType.SUCCESS);
+            this.AddNotification("изтрихте статията!", NotificationType.SUCCESS);
             return RedirectToAction("Index");
         }
 

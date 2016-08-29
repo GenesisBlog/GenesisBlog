@@ -12,8 +12,14 @@
 
 a.actionlink-class { color: #0000cd } 
 
+span.comment-left {
+    display: inline-block;
+    margin-right: 900px;
+}
 
-
+span.add-comment {
+    display: inline-block;
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
