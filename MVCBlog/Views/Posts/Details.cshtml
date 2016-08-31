@@ -4,6 +4,7 @@
 @using MVCBlog.Models
 @model MVCBlog.Models.Post
 
+
     
 
 @{
@@ -20,8 +21,12 @@
     <p></p>
 </div>
 
-<span class="comment-left"><h4>Коментари:</h4></span><span class="glyphicon glyphicon-comment"></span>
-<span class="add-comment">@Html.ActionLink("Добави коментар", "Create", "Comments")</span>       
+<span class="comment-left"><h4>Коментари:</h4></span>
+<span class="add-comment"><button type="button" class="btn btn-default btn-xs">
+    <a href='@Url.Action("Create", "Comments")'>
+        <img src='@Url.Content("~/Content/images/Comment.png")' style="width: 85px; height: 26px; padding-top: 1px; padding-bottom: 1px" />
+    </a>
+</button></span>       
 
 <div>
     @foreach (var item in Model.Comments)

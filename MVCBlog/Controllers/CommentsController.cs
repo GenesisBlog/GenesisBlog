@@ -42,6 +42,7 @@ namespace MVCBlog.Controllers
         // GET: Comments/Create
         public ActionResult Create()
         {
+            //ViewBag.PostId= db.Posts.Include(p=> p.Id==)
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title");
             return View();
         }
@@ -62,8 +63,9 @@ namespace MVCBlog.Controllers
                 return RedirectToAction("Index");
             }
 
+            //int PostId = db.Posts.Single(p => p.Id == comment.PostId);
             ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
-          
+
             return View(comment);
         }
 

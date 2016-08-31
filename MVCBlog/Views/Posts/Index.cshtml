@@ -43,16 +43,31 @@
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
-        <td>
+        <td style="width: 270px">
             @if (User.IsInRole("Administrators") || User.Identity.Name == item.Author.UserName)
             {
-                @Html.ActionLink("Промени", "Edit", new { id = item.Id }) @:|
+                <button type="button" class="btn btn-default btn-xs">
+                    <a href='@Url.Action("Edit", new { id = item.Id })'>
+                        <img src='@Url.Content("~/Content/images/Edit.png")' style="width: 70px; height: 24px; padding-top: 1px; padding-bottom: 1px" />
+                    </a>
+                </button>
+@*                @Html.ActionLink("Промени", "Edit", new { id = item.Id }) @:|*@
             }
 
-            @Html.ActionLink("Детайли", "Details", new { id = item.Id }) 
+            <button type="button" class="btn btn-default btn-xs">
+                <a href='@Url.Action("Details", new { id = item.Id })'>
+                    <img src='@Url.Content("~/Content/images/Detail.png")' style="width: 70px; height: 24px; padding-top: 1px; padding-bottom: 1px" />
+                </a>
+            </button>
+@*            @Html.ActionLink("Детайли", "Details", new { id = item.Id }) *@
             @if (User.IsInRole("Administrators") || User.Identity.Name == item.Author.UserName)
             {
-                @:| @Html.ActionLink("Изтрий", "Delete", new {id = item.Id})
+                <button type="button" class="btn btn-default btn-xs">
+                    <a href='@Url.Action("Delete", new {id = item.Id})'>
+                        <img src='@Url.Content("~/Content/images/Delete6.png")' style="width: 68px; height: 24px; padding-bottom: 2px; padding-top: 2px; padding-left: 3px; padding-right: 3px" />
+                    </a>
+                </button>
+@*                @:| @Html.ActionLink("Изтрий", "Delete", new {id = item.Id})*@
             }
         </td>
     </tr>

@@ -18,14 +18,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Genesis Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-edit" })
+
+                <a href="/Home/Index">
+                    <img src='@Url.Content("~/Content/images/GenesisBlog2.png")' style="width: 170px; height: 55px; padding-top: 3px" />
+                </a>
+@*                @Html.ActionLink("Genesis Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Начало", "Index", "Home", new { area = "" }, new { @class = "glyphicon glyphicon-home" })</li>
-                    <li>@Html.ActionLink("Всички статии", "Index", "Posts", new { area = "" }, new { @class = "glyphicon glyphicon-list-alt" })</li>
-                    <li>@Html.ActionLink("Създай статия", "Create", "Posts", new { area = "" }, new { @class = "glyphicon glyphicon-pencil" })</li>
-                    <li>@Html.ActionLink("Всички коментари", "Index", "Comments", new { area = "" }, new { @class = "glyphicon glyphicon-comment" })</li>
+                    
+                    <li>
+                        <a href="/Home/Index">
+                            <img src='@Url.Content("~/Content/images/Home2.png")' style="width: 80px; height: 28px;" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Posts/Index">
+                            <img src='@Url.Content("~/Content/images/Posts4.png")' style="width: 100px; height: 30px;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Posts/Create">
+                            <img src='@Url.Content("~/Content/images/CreatePost3.png")' style="width: 110px; height: 30px;"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Comments/Index">
+                            <img src='@Url.Content("~/Content/images/Comments2.png")' style="width: 120px; height: 25px" />
+                        </a>
+                    </li>
+@*                    <li>@Html.ActionLink("Начало", "Index", "Home")</li>*@
+@*                    <li>@Html.ActionLink("Всички статии", "Index", "Posts")</li>*@
+@*                    <li>@Html.ActionLink("Създай статия", "Create", "Posts")</li>*@
+@*                    <li>@Html.ActionLink("Всички коментари", "Index", "Comments")</li>*@
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
