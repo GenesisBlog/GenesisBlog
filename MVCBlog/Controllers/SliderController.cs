@@ -49,6 +49,7 @@ namespace MVCBlog.Controllers
             return RedirectToAction("Index");
         }
 
+        
         public ActionResult DeleteImages()
         {
             using (ApplicationDbContext db = new ApplicationDbContext())

@@ -1,12 +1,24 @@
 ﻿@model IEnumerable<MVCBlog.Models.Gallery>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Галерия";
 }
 
-<h2>Index</h2>
+<h2>Галерия</h2>
 
 <p>
-    @Html.ActionLink("Add Image", "AddImage", "Slider", new { id = "linkAddimage" }, null) |
-    @Html.ActionLink("Delete Image", "DeleteImages", "Slider", new { id = "linkDeleteImage" }, null)
+    <button type="button" class="btn btn-default btn-xs">
+        <a href='@Url.Action("AddImage", "Slider", new {id = "linkAddimage"}, null)'>
+            <img src='@Url.Content("~/Content/images/addImage2.png")' style="width: 68px; height: 24px" />
+        </a>
+    </button>
+
+    @if (User.IsInRole("Administrators"))
+    {
+        <button type="button" class="btn btn-default btn-xs">
+            <a href='@Url.Action("DeleteImages", "Slider", new {id = "linkDeleteImage"}, null)'>
+                <img src='@Url.Content("~/Content/images/Delete6.png")' style="width: 68px; height: 24px; padding-bottom: 2px; padding-top: 2px; padding-left: 3px; padding-right: 3px"/>
+            </a>
+        </button>
+    }
 </p>
 @Html.Partial("~/Views/Shared/SliderPartial.cshtml", Model)

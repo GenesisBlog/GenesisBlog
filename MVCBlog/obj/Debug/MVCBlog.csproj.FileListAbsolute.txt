@@ -284,4 +284,3 @@ D:\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.Twitter.xml
 D:\GenesisBlog\MVCBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.dll
 D:\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.pdb
-D:\GenesisBlog\MVCBlog\obj\Debug\MVCBlog.csprojResolveAssemblyReference.cache
