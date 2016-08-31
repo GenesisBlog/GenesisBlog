@@ -18,5 +18,12 @@ namespace MVCBlog.Controllers
                 .OrderByDescending(p => p.Date).Take(3);
             return View(posts.ToList());
         }
+
+        public ActionResult GenesisBlog()
+        {
+            var posts = db.Posts.Include(p => p.Comments).Include(p=> p.Author)
+                .OrderByDescending(p => p.Comments.Count).Take(3);
+            return View(posts.ToList());
+        }
     }
 }

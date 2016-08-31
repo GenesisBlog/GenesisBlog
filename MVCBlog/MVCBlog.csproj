@@ -273,6 +273,7 @@
     <Content Include="Views\Slider\AddImage.cshtml" />
     <Content Include="Views\Slider\DeleteImages.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gallery.cshtml" />
+    <Content Include="Views\Home\GenesisBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "GenesisBlog";
+}
+@model List<MVCBlog.Models.Post>
+
+<h2>Най-коментирните статии</h2>
+
+@foreach (var post in Model)
+{
+    <div class="post col-md-12">
+        <div class="post">
+            <h2><a href="/Posts/Details/@post.Id">@post.Title</a></h2>
+            <div>
+                Публикувано на: <i>@post.Date</i>
+                @if (post.Author != null)
+                {
+                    @:от <i>@post.Author.FullName</i>
+                }
+            </div>
+            <p>@MVCBlog.Classes.Utils.CutText(post.Body)</p>
+        </div>
+    </div>
+}

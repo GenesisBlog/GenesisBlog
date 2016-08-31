@@ -24,13 +24,14 @@ namespace MVCBlog.Controllers
         }
 
         // GET: Posts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int? page)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Post post = db.Posts.Include(p=>p.Comments).Single(p=>p.Id==id);
+            //var comment = db.Comments.Include(p => p.Body).ToList().ToPagedList(page ?? 1, 6);
             if (post == null)
             {
                 return HttpNotFound();

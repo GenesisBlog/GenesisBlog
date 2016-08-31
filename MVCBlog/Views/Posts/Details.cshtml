@@ -31,7 +31,7 @@
 <div>
     @foreach (var item in Model.Comments)
     {
-        <hr />
+        <hr/>
         <p>
             @Html.DisplayFor(modelItem => item.Author)
         </p>
@@ -39,9 +39,15 @@
         <p>
             @Html.DisplayFor(modelItem => item.Body)
         </p>
-        
+
     }
 </div>
+
+@*@Html.PagedListPager(Model.Comments, page => Url.Action("Details", new*@
+@*{*@
+@*    page*@
+@*}))*@
+
 
 
 
