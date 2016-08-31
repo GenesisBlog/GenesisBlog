@@ -22,5 +22,7 @@ namespace MVCBlog.Models
         public System.Data.Entity.DbSet<MVCBlog.Models.Post> Posts { get; set; }
 
         public System.Data.Entity.DbSet<MVCBlog.Models.Comment> Comments { get; set; }
+
+        public DbSet<Gallery> gallery { get; set; }
     }
 }
