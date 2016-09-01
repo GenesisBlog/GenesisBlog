@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Web;
 using System.Web.Mvc;
 using MVCBlog.Models;
@@ -25,6 +26,7 @@ namespace MVCBlog.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult AddImage(HttpPostedFileBase ImagePath)
         {
             if (ImagePath != null)
@@ -59,6 +61,8 @@ namespace MVCBlog.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+        [Authorize(Roles = "Administrators")]
         public ActionResult DeleteImages(IEnumerable<int> ImagesIDs)
         {
             using (ApplicationDbContext db = new ApplicationDbContext())
