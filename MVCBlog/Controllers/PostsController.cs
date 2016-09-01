@@ -20,7 +20,7 @@ namespace MVCBlog.Controllers
         // GET: Posts
         public ActionResult Index(int? page)
         {
-            return View(db.Posts.Include(p=>p.Author).ToList().ToPagedList(page ?? 1, 6));
+            return View(db.Posts.Include(p=>p.Author).ToList().ToPagedList(page ?? 1, 5));
         }
 
         // GET: Posts/Details/5
